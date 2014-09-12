@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        function rockPaperScissors() {
+            var userChoice = prompt("Do you choose rock, paper or scissors?");
+var computerChoice = Math.random();
+if (computerChoice < 0.34) {
+    computerChoice = "rock";
+} else if(computerChoice <= 0.67) {
+    computerChoice = "paper";
+} else {
+    computerChoice = "scissors";
+} 
+
+var compare = function(choice1, choice2) {
+    if(choice1 === choice2) {
+        return "The result is a tie!";
+    }
+    else if(choice1 === "rock") {
+        if(choice2 === "scissors") {
+            return "rock smashes scissors! \nUser wins!";
+        }
+        else {
+            return "paper covers rock! \nComputer wins!";
+        }
+    }
+    else if(choice1 === "paper") {
+        if(choice2 === "scissors") {
+            return "scissors cuts paper! \nComputer wins!";
+        }
+        else {
+            return "paper covers rock! \nUser wins!";
+        }
+    }
+    else if(choice1 === "scissors") {
+        if(choice2 === "rock") {
+            return "rock smashes scissors! \nComputer wins!";
+        }
+        else {
+            return "scissors cuts paper! \nUser wins!";
+        }
+    }
+};
+alert("User: " + userChoice +"\nComputer: " + computerChoice + "\n" +compare(userChoice,computerChoice));
+}
+</script>
+        <style>
+            body {
+                text-align: center;
+                background: url("France.jpg");
+                color: white;
+                font-family: 'Josefin Slab', serif;
+                font-size: 24px; 
+                background-position: center center;
+                background-repeat: repeat;
+                background-attachment: fixed;
+            }
+            p {
+                font-size: 24px;
+            }
+            input {
+                border: 0;
+                padding: 12px;
+                font-size: 18px;
+            }
+            input[type = "submit"] {
+                background: limegreen;
+                color:black;
+            }
+            button {
+                background: limegreen;
+                color:black;
+                border: 0;
+                padding: 12px;
+                font-size: 18px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>Rahul Yadav </h1>
+        <p> Hi! I am a Graduate Student at Carnegie Mellon University School of Computer Science.
+        <br> And to quote Will Graham:<i>"This is my design."</i></p> 
+        Email: <input type = "email" placeholder = "Your email"><br><br>
+        <input type = "submit"><br><br><br>
+        <button type="button" onclick="rockPaperScissors()">Play Rock Paper Scissors</button>
+    </body>
